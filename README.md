@@ -1,2 +1,3 @@
-# writing-assistant
+# Writing assistant
+
 Electron + React writing assistant

@@ -1,0 +1,38 @@
+{
+  "name": "electron-typescript-guide",
+  "version": "1.0.0",
+  "description": "Writing helper application",
+  "main": "dist/main.js",
+  "author": "Aleaxandre",
+  "license": "MIT",
+  "scripts": {
+    "compile": "tsc && cp ./index.html build",
+    "start": "yarn run compile && electron .",
+    "watch": "yarn run compile && nodemon --exec electron .",
+    "dev:electron": "cross-env NODE_ENV=development webpack --config webpack.electron.config.js --mode development && electron .",
+    "dev:react": "cross-env NODE_ENV=development webpack serve --config webpack.react.config.js --mode development"
+  },
+  "dependencies": {
+    "@babel/core": "^7.12.13",
+    "@babel/preset-env": "^7.12.13",
+    "@babel/preset-react": "^7.12.13",
+    "@babel/preset-typescript": "^7.12.13",
+    "@types/react": "^17.0.1",
+    "@types/react-dom": "^17.0.0",
+    "babel-loader": "^8.2.2",
+    "electron": "^11.2.3",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "slate": "^0.59.0",
+    "slate-react": "^0.59.0",
+    "typescript": "^4.1.3",
+    "webpack": "^5.21.1",
+    "webpack-cli": "^4.5.0",
+    "webpack-dev-server": "^3.11.2"
+  },
+  "devDependencies": {
+    "css-loader": "^5.0.1",
+    "html-webpack-plugin": "^5.0.0",
+    "style-loader": "^2.0.0"
+  }
+}
