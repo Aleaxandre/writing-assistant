@@ -19,13 +19,87 @@ body,
     "Lucida Sans", Arial, sans-serif;
 }
 .navigation-menu {
-  flex: 0 0 25%;
+  flex: 0 0 10%;
   border-right: 2px solid white;
   height: 100%;
+  padding-left: 10px;
 }
 
 .viewer {
-  padding: 5px;
+  /* padding: 5px; */
   width: 100%;
   background-color: #333333;
+}
+
+.note {
+  padding-left: 20px;
+}
+
+.notebook > span:hover {
+  cursor: pointer;
+}
+
+.minusSign::before {
+  display: inline-block;
+  content: "-";
+  width: 15px;
+  height: 15px;
+  line-height: 15px;
+  text-align: center;
+  font-weight: bolder;
+  margin-right: 3px;
+}
+
+.plusSign::before {
+  display: inline-block;
+  content: "+";
+  width: 15px;
+  height: 15px;
+  line-height: 15px;
+  text-align: center;
+  font-size: 15px;
+  margin-right: 3px;
+}
+
+.circled::before {
+  border: 2px solid white;
+  border-radius: 15px;
+}
+
+.squared::before {
+  border: 2px solid white;
+  border-radius: 7px;
+}
+
+/* MARKDOWN EDITOR */
+.markdown-editor {
+  display: flex;
+  justify-content: flex-start;
+  height: 100%;
+  background-color: #222222;
+  color: whitesmoke;
+}
+
+.md-editor-column {
+  flex: 0 0 50%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.md-editor-textarea {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  overflow-y: scroll;
+  padding-left: 5px;
+  background-color: #333333;
+  color: wheat;
+}
+.md-editor-preview {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  overflow-y: scroll;
+  padding-left: 5px;
 }

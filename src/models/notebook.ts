@@ -1,5 +1,7 @@
+import { Note } from "./note";
+
 export interface Notebook {
   title: string;
-  noteCount: number;
   location: string;
+  notes: Note[];
 }
