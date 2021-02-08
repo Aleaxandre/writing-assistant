@@ -19,7 +19,6 @@ export class NotebooksComponent extends React.Component {
     const notebooks: Notebook[] = [];
 
     FsUtils.readNotebooks('./data').map(({ title, location, notes }) => {
-      console.log(`${title}/${location}/${notes}`);
       notebooks.push({ title, location, notes });
     });
 

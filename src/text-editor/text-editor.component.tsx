@@ -5,8 +5,7 @@ import { FsUtils } from "../utils/fs-utils";
 export class TextEditor extends React.Component {
   // static contextType = ViewerContext;
   render() {
-    console.log(JSON.stringify(this.context));
-	  return (
+    return (
           <AppContext.Consumer>
             {value => {
                 if (value.displayedNote) {

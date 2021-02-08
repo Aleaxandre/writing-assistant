@@ -19,8 +19,8 @@ body,
     "Lucida Sans", Arial, sans-serif;
 }
 .navigation-menu {
-  flex: 0 0 10%;
-  border-right: 2px solid white;
+  flex: 0 0 15%;
+  border-right: 2px solid slategrey;
   height: 100%;
   padding-left: 10px;
 }
@@ -73,6 +73,27 @@ body,
   margin-right: 3px;
 }
 
+.toolbar-button {
+  display: inline-block;
+  line-height: 15px;
+  text-align: center;
+  font-size: 15px;
+  margin-right: 3px;
+  cursor: pointer;
+  padding: 3px;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.right {
+  content: "Show";
+  background-color: green;
+}
+.left {
+  content: "Hide";
+  background-color: red;
+}
+
 .circled::before {
   border: 2px solid white;
   border-radius: 15px;
@@ -83,9 +104,20 @@ body,
   border-radius: 7px;
 }
 
+.hidden {
+  display: none;
+}
+
 /* MARKDOWN EDITOR */
 .markdown-editor {
   display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.markdown-editor-dualview {
+  display: flex;
+  flex-direction: row;
   justify-content: flex-start;
   height: 100%;
   background-color: #222222;
@@ -98,21 +130,26 @@ body,
   padding: 0;
   margin: 0;
 }
+.md-editor-column-toolbar {
+  flex: 0 0;
+  height: 100%;
+  background-color: slateblue;
+}
 
 .md-editor-textarea {
   width: 100%;
   height: 100%;
   box-sizing: border-box;
-  overflow-y: scroll;
   padding-left: 5px;
   background-color: #333333;
   color: wheat;
+  outline: none;
+  resize: none;
+  border: 0;
 }
 .md-editor-preview {
   width: 100%;
-  height: 100%;
   box-sizing: border-box;
-  overflow-y: scroll;
   padding-left: 5px;
   font-size: small;
   font-family: Arial, Helvetica, sans-serif;

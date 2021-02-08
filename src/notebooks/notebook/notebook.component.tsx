@@ -14,7 +14,7 @@ export class NotebookComponent extends React.Component<NotebookProps, NotebookSt
   
   render() {
     return <div className="notebook">
-      <span title="Notebook" onClick={this.handleClick} >{this.state.toggled ? <i className='minusSign'/> : <i className='plusSign squared'/>}{this.props.notebook.title} ({this.props.notebook.notes.length})</span>
+      <span title="Notebook" onClick={this.handleClick} >{this.state.toggled ? <i className='minusSign'/> : <i className='plusSign'/>}{this.props.notebook.title} ({this.props.notebook.notes.length})</span>
 
       { this.state.toggled && this.props.notebook.notes.map((item, index) => (
         <NoteComponent note={item} key={index}/>
