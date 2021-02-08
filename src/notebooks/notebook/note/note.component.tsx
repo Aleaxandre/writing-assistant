@@ -1,8 +1,11 @@
 import React, { MouseEvent } from "react";
 import { AppContext } from "../../../app";
 import { Note } from "../../../models/note";
+import { FsUtils } from "../../../utils/fs-utils";
+
 type NoteProps = { note: Note };
 type NoteStates = { selected: boolean };
+
 export class NoteComponent extends React.Component<NoteProps, NoteStates> {
   constructor(props:NoteProps){
     super(props);
@@ -21,10 +24,13 @@ export class NoteComponent extends React.Component<NoteProps, NoteStates> {
       </div>;
   }
 
-  handleClick(setDisplayedNote: (displayedNote:Note) => void, note: Note, event: MouseEvent<HTMLSpanElement>): void {
+  handleClick(setDisplayedNote: (displayedNote: Note) => void, note: Note, event: MouseEvent<HTMLSpanElement>): void {
     this.setState(state => ({
       selected: !state.selected
     }));
+
+    note.content = FsUtils.readNoteContent(note.location);
+
     setDisplayedNote(note);
   }
 }

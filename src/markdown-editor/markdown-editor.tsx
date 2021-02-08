@@ -1,13 +1,14 @@
 import React, { ChangeEvent } from "react";
 import { Marked, Renderer } from '@ts-stack/markdown';
 
-type MarkdownEditorProps = {};
-type MarkdownEditorState = {text: string};
+type MarkdownEditorProps = {displayedNoteContent: string};
+type MarkdownEditorState = {};
 
 export class MarkdownEditorComponent extends React.Component<MarkdownEditorProps, MarkdownEditorState>{
   constructor(props:MarkdownEditorProps){
     super(props);
-    this.state={text: ''};
+
+    this.state={text: props.displayedNoteContent};
     this.handleChange = this.handleChange.bind(this);
     Marked.setOptions({
       renderer: new Renderer,
@@ -24,23 +25,24 @@ export class MarkdownEditorComponent extends React.Component<MarkdownEditorProps
         return (
           <div className='markdown-editor'>
             <div className='md-editor-column'>
+                {/* <div><i className='plusSign squared'></i></div> */}
                 <textarea 
                     className='md-editor-textarea' 
                     rows={35} 
                     onChange={this.handleChange}
-                    value={this.state.text}
+                    value={this.props.displayedNoteContent}
                 />
             </div>
             <div className='md-editor-column'>
-                <div dangerouslySetInnerHTML={this.renderText(this.state.text)} className='md-editor-preview'></div>
+                <div dangerouslySetInnerHTML={this.renderText(this.props.displayedNoteContent)} className='md-editor-preview'></div>
             </div>
           </div>
         )
       }
 
       componentDidUpdate () {
-        const { text } = this.state
-        localStorage.setItem('text', text)
+        const { displayedNoteContent } = this.props
+        localStorage.setItem('text', displayedNoteContent)
       }
 
       componentDidMount () {

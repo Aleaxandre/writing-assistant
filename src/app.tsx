@@ -10,10 +10,10 @@ const mainElement = document.createElement('div');
 
 document.body.appendChild(mainElement);
 
-export const AppContext = React.createContext({displayedNote: undefined, setDisplayedNote: (displayedNote:Note)=>{}} as AppState)
+export const AppContext = React.createContext({displayedNote: {} as Note, setDisplayedNote: (displayedNote:Note)=>{}} as AppState)
 
 type AppProps = { };
-type AppState = { displayedNote: Note|undefined, setDisplayedNote: (displayedNote:Note) => void };
+type AppState = { displayedNote: Note, setDisplayedNote: (displayedNote:Note) => void };
 
 class App extends React.Component<AppProps, AppState> {
   constructor(props:AppProps) {
@@ -21,7 +21,7 @@ class App extends React.Component<AppProps, AppState> {
     this.setDisplayedNote = this.setDisplayedNote.bind(this);
 
     this.state = {
-      displayedNote: undefined,
+      displayedNote: {} as Note,
       setDisplayedNote: this.setDisplayedNote,
     };
   }
@@ -31,7 +31,7 @@ class App extends React.Component<AppProps, AppState> {
       <div className='main'>
         <AppContext.Provider value={this.state}>
           <NotebooksComponent/>
-          <ViewerComponent/>
+          <ViewerComponent displayedNote={this.state.displayedNote}/>
         </AppContext.Provider>
       </div>
     );

@@ -31,11 +31,23 @@ body,
   background-color: #333333;
 }
 
-.note {
-  padding-left: 20px;
+.note span {
+  padding-left: 5px;
+  padding-right: 5px;
+  margin-left: 20px;
 }
 
-.notebook > span:hover {
+.notebook span:hover {
+  color: sandybrown;
+  font-weight: bolder;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.note span:hover {
+  color: greenyellow;
+  font-weight: bolder;
+  border-radius: 5px;
   cursor: pointer;
 }
 
@@ -102,4 +114,6 @@ body,
   box-sizing: border-box;
   overflow-y: scroll;
   padding-left: 5px;
+  font-size: small;
+  font-family: Arial, Helvetica, sans-serif;
 }
