@@ -1,9 +1,7 @@
-import React, { ChangeEvent, MouseEvent } from "react";
-import { Marked, Renderer } from "@ts-stack/markdown";
-import { HideButton } from "../components/hide-button/hide-button";
-import { SvgSave } from "../icons/svg-save";
-import { SvgMarkdown } from "../icons/svg-markdown";
-import { SvgNotebook } from "../icons/svg-notebook";
+import React, { ChangeEvent, MouseEvent } from 'react';
+import { Marked, Renderer } from '@ts-stack/markdown';
+import { HideButton } from '../components/hide-button/hide-button';
+import { SvgSave } from '../icons/svg-save';
 
 type MarkdownEditorProps = {
   noteContent: string;
@@ -12,10 +10,7 @@ type MarkdownEditorProps = {
 }; // (newContent:string)=>{}
 type MarkdownEditorState = { originalHidden: boolean };
 
-export class MarkdownEditorComponent extends React.Component<
-  MarkdownEditorProps,
-  MarkdownEditorState
-> {
+export class MarkdownEditorComponent extends React.Component<MarkdownEditorProps, MarkdownEditorState> {
   constructor(props: MarkdownEditorProps) {
     super(props);
 
@@ -39,34 +34,15 @@ export class MarkdownEditorComponent extends React.Component<
     return (
       <div className="markdown-editor">
         <div className="md-editor-column-toolbar">
-          <HideButton
-            hidden={this.state?.originalHidden}
-            clicked={this.handleHideOriginal}
-          />
-          <SvgSave
-            color="green"
-            iconsize={20}
-            title={"Save"}
-            onClick={this.handleSave}
-          />
+          <HideButton hidden={this.state?.originalHidden} clicked={this.handleHideOriginal} />
+          <SvgSave color="green" iconsize={20} title={'Save'} onClick={this.handleSave} />
         </div>
         <div className="markdown-editor-dualview">
-          <div
-            className={
-              this.state?.originalHidden ? "md-editor-column" : "hidden"
-            }
-          >
-            <textarea
-              className="md-editor-textarea"
-              onChange={this.handleChange}
-              value={this.props.noteContent}
-            />
+          <div className={this.state?.originalHidden ? 'md-editor-column' : 'hidden'}>
+            <textarea className="md-editor-textarea" onChange={this.handleChange} value={this.props.noteContent} />
           </div>
           <div className="md-editor-column">
-            <div
-              dangerouslySetInnerHTML={this.renderText(this.props.noteContent)}
-              className="md-editor-preview"
-            ></div>
+            <div dangerouslySetInnerHTML={this.renderText(this.props.noteContent)} className="md-editor-preview"></div>
           </div>
         </div>
       </div>
@@ -74,8 +50,7 @@ export class MarkdownEditorComponent extends React.Component<
   }
 
   componentDidUpdate() {
-    // const { noteContent } = this.props;
-    // localStorage.setItem('text', noteContent);
+    console.log('Updating...');
   }
 
   componentDidMount() {

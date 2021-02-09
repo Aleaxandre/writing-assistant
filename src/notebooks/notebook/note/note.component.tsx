@@ -1,9 +1,9 @@
-import React, { MouseEvent } from "react";
-import { AppContext } from "../../../app";
-import { SvgMarkdown } from "../../../icons/svg-markdown";
-import { SvgNotebook } from "../../../icons/svg-notebook";
-import { Note } from "../../../models/note";
-import { FsUtils } from "../../../utils/fs-utils";
+import React, { MouseEvent } from 'react';
+import { AppContext } from '../../../app';
+import { SvgMarkdown } from '../../../icons/svg-markdown';
+import { SvgNotebook } from '../../../icons/svg-notebook';
+import { Note } from '../../../models/note';
+import { FsUtils } from '../../../utils/fs-utils';
 
 type NoteProps = { note: Note };
 type NoteStates = { selected: boolean };
@@ -17,19 +17,14 @@ export class NoteComponent extends React.Component<NoteProps, NoteStates> {
 
   render() {
     return (
-      <div className="note">
+      <div className='note'>
         <AppContext.Consumer>
           {({ setDisplayedNote }) => (
             <div
-              title={
-                "Last modified: " + this.props.note.updateTime.toLocaleString()
-              }
-              onClick={(event) =>
-                this.handleClick(setDisplayedNote, this.props.note, event)
-              }
-            >
+              title={'Last modified: ' + this.props.note.updateTime.toLocaleString()}
+              onClick={(event) => this.handleClick(setDisplayedNote, this.props.note, event)}>
               {this.props.note.title}
-              <SvgMarkdown color="red" iconsize={10} />
+              <SvgMarkdown color='red' iconsize={10} />
             </div>
           )}
         </AppContext.Consumer>
@@ -37,11 +32,7 @@ export class NoteComponent extends React.Component<NoteProps, NoteStates> {
     );
   }
 
-  handleClick(
-    setDisplayedNote: (displayedNote: Note) => void,
-    note: Note,
-    event: MouseEvent<HTMLSpanElement>
-  ): void {
+  handleClick(setDisplayedNote: (displayedNote: Note) => void, note: Note, event: MouseEvent<HTMLSpanElement>): void {
     this.setState((state) => ({
       selected: !state.selected,
     }));

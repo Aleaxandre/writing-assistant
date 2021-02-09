@@ -1,14 +1,14 @@
-import React from "react";
-import { Notebook } from "../models/notebook";
-import { FsUtils } from "../utils/fs-utils";
-import { NotebookComponent } from "./notebook/notebook.component";
+import React from 'react';
+import { Notebook } from '../models/notebook';
+import { FsUtils } from '../utils/fs-utils';
+import { NotebookComponent } from './notebook/notebook.component';
 
 export class NotebooksComponent extends React.Component {
   render() {
     const notebooks = this.loadNotebooksFromDisk();
 
     return (
-      <div className="menu navigation-menu">
+      <div className='menu navigation-menu'>
         <h3>Notebooks</h3>
         {notebooks.map((item, index) => (
           <NotebookComponent notebook={item} key={index} />
@@ -20,7 +20,7 @@ export class NotebooksComponent extends React.Component {
   private loadNotebooksFromDisk(): Notebook[] {
     const notebooks: Notebook[] = [];
 
-    FsUtils.readNotebooks("./data").map(({ title, location, notes }) => {
+    FsUtils.readNotebooks('./data').map(({ title, location, notes }) => {
       notebooks.push({ title, location, notes });
     });
 
