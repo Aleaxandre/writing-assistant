@@ -48,4 +48,8 @@ export class FsUtils {
     const noteContent = fs.readFileSync(noteLocation, "utf8");
     return noteContent;
   }
+
+  public static writeNote(noteLocation: string, noteContent: string) {
+    fs.writeFileSync(noteLocation, noteContent);
+  }
 }

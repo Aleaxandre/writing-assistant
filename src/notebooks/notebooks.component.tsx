@@ -7,18 +7,20 @@ export class NotebooksComponent extends React.Component {
   render() {
     const notebooks = this.loadNotebooksFromDisk();
 
-    return <div className="menu navigation-menu">
-      <h1>Notebooks</h1>
-      {notebooks.map((item, index) => (
-        <NotebookComponent notebook={item} key={index}/>
-      ))}
-    </div>;
+    return (
+      <div className="menu navigation-menu">
+        <h3>Notebooks</h3>
+        {notebooks.map((item, index) => (
+          <NotebookComponent notebook={item} key={index} />
+        ))}
+      </div>
+    );
   }
 
   private loadNotebooksFromDisk(): Notebook[] {
     const notebooks: Notebook[] = [];
 
-    FsUtils.readNotebooks('./data').map(({ title, location, notes }) => {
+    FsUtils.readNotebooks("./data").map(({ title, location, notes }) => {
       notebooks.push({ title, location, notes });
     });
 

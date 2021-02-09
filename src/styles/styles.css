@@ -26,28 +26,22 @@ body,
 }
 
 .viewer {
-  /* padding: 5px; */
   width: 100%;
-  background-color: #333333;
 }
 
-.note span {
-  padding-left: 5px;
-  padding-right: 5px;
-  margin-left: 20px;
+.note > div {
+  padding-left: 20px;
 }
 
-.notebook span:hover {
-  color: sandybrown;
-  font-weight: bolder;
-  border-radius: 5px;
+.notebook div:hover {
+  color: whitesmoke;
+  background-color: darkslategrey;
   cursor: pointer;
 }
 
-.note span:hover {
-  color: greenyellow;
-  font-weight: bolder;
-  border-radius: 5px;
+.note div:hover {
+  color: black;
+  background-color: slategrey;
   cursor: pointer;
 }
 
@@ -104,6 +98,17 @@ body,
   border-radius: 7px;
 }
 
+.squaredIcon {
+  display: inline-block;
+  /* border-right: 1px solid slategray; */
+  /* border-radius: 20%; */
+}
+
+.squaredIcon:active {
+  background-color: lightslategray;
+  color: black;
+}
+
 .hidden {
   display: none;
 }
@@ -133,7 +138,6 @@ body,
 .md-editor-column-toolbar {
   flex: 0 0;
   height: 100%;
-  background-color: slateblue;
 }
 
 .md-editor-textarea {
@@ -141,8 +145,8 @@ body,
   height: 100%;
   box-sizing: border-box;
   padding-left: 5px;
-  background-color: #333333;
-  color: wheat;
+  background-color: black;
+  color: whitesmoke;
   outline: none;
   resize: none;
   border: 0;
