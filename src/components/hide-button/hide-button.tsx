@@ -10,13 +10,13 @@ type HideButtonProps = {
 export class HideButton extends React.Component<HideButtonProps> {
   render() {
     return this.props.hidden ? (
-      <SvgNoSplit color='white' iconsize={20} onClick={this.props.clicked} title='Unsplit view to hide markdown' />
+      <SvgNoSplit color='white' iconsize={20} handleclick={this.props.clicked} title='Unsplit view to hide markdown' />
     ) : (
       <SvgSplit
         color='white'
         colorsplitbar='red'
         iconsize={20}
-        onClick={this.props.clicked}
+        handleclick={this.props.clicked}
         title='Split view to display markdown'
       />
     );

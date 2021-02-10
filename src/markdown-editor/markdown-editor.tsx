@@ -32,17 +32,17 @@ export class MarkdownEditorComponent extends React.Component<MarkdownEditorProps
 
   render() {
     return (
-      <div className="markdown-editor">
-        <div className="md-editor-column-toolbar">
+      <div className='markdown-editor'>
+        <div className='md-editor-column-toolbar'>
           <HideButton hidden={this.state?.originalHidden} clicked={this.handleHideOriginal} />
-          <SvgSave color="green" iconsize={20} title={'Save'} onClick={this.handleSave} />
+          <SvgSave color='green' iconsize={20} title={'Save'} handleclick={this.handleSave} />
         </div>
-        <div className="markdown-editor-dualview">
+        <div className='markdown-editor-dualview'>
           <div className={this.state?.originalHidden ? 'md-editor-column' : 'hidden'}>
-            <textarea className="md-editor-textarea" onChange={this.handleChange} value={this.props.noteContent} />
+            <textarea className='md-editor-textarea' onChange={this.handleChange} value={this.props.noteContent} />
           </div>
-          <div className="md-editor-column">
-            <div dangerouslySetInnerHTML={this.renderText(this.props.noteContent)} className="md-editor-preview"></div>
+          <div className='md-editor-column'>
+            <div dangerouslySetInnerHTML={this.renderText(this.props.noteContent)} className='md-editor-preview'></div>
           </div>
         </div>
       </div>

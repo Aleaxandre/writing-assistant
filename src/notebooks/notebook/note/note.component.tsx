@@ -12,7 +12,7 @@ export class NoteComponent extends React.Component<NoteProps, NoteStates> {
   constructor(props: NoteProps) {
     super(props);
     this.state = { selected: false };
-    this.handleClick = this.handleClick.bind(this);
+    this.handleclick = this.handleclick.bind(this);
   }
 
   render() {
@@ -22,7 +22,7 @@ export class NoteComponent extends React.Component<NoteProps, NoteStates> {
           {({ setDisplayedNote }) => (
             <div
               title={'Last modified: ' + this.props.note.updateTime.toLocaleString()}
-              onClick={(event) => this.handleClick(setDisplayedNote, this.props.note, event)}>
+              onClick={(event) => this.handleclick(setDisplayedNote, this.props.note, event)}>
               {this.props.note.title}
               <SvgMarkdown color='red' iconsize={10} />
             </div>
@@ -32,7 +32,7 @@ export class NoteComponent extends React.Component<NoteProps, NoteStates> {
     );
   }
 
-  handleClick(setDisplayedNote: (displayedNote: Note) => void, note: Note, event: MouseEvent<HTMLSpanElement>): void {
+  handleclick(setDisplayedNote: (displayedNote: Note) => void, note: Note, event: MouseEvent<HTMLSpanElement>): void {
     this.setState((state) => ({
       selected: !state.selected,
     }));

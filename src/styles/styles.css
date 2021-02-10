@@ -15,8 +15,7 @@ body,
 }
 
 .menu {
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 .navigation-menu {
   flex: 0 0 15%;
@@ -32,7 +31,9 @@ body,
 .note > div {
   padding-left: 20px;
 }
-
+.notebook div {
+  margin-bottom: 10px;
+}
 .notebook div:hover {
   color: whitesmoke;
   background-color: darkslategrey;
@@ -47,7 +48,7 @@ body,
 
 .minusSign::before {
   display: inline-block;
-  content: "-";
+  content: '-';
   width: 15px;
   height: 15px;
   line-height: 15px;
@@ -58,7 +59,7 @@ body,
 
 .plusSign::before {
   display: inline-block;
-  content: "+";
+  content: '+';
   width: 15px;
   height: 15px;
   line-height: 15px;
@@ -80,11 +81,11 @@ body,
 }
 
 .right {
-  content: "Show";
+  content: 'Show';
   background-color: green;
 }
 .left {
-  content: "Hide";
+  content: 'Hide';
   background-color: red;
 }
 
@@ -100,11 +101,17 @@ body,
 
 .squaredIcon {
   display: inline-block;
-  /* border-right: 1px solid slategray; */
-  /* border-radius: 20%; */
 }
 
-.squaredIcon:active {
+.squaredBorderIcon {
+  border: 1px solid slategray;
+  border-radius: 20%;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.squaredIcon:active,
+.squaredBorderIcon:active {
   background-color: lightslategray;
   color: black;
 }
